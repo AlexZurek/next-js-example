@@ -7,7 +7,7 @@
     "dev": "next",
     "build": "next build",
     "start": "next start -p $PORT",
-    "test": "JEST_JUNIT_OUTPUT_DIR=\"./artifacts/jest\" jest",
+    "test": "jest",
     "test:watch": "jest --watch"
   },
   "keywords": [],
