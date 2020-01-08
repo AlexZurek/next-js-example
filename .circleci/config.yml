@@ -30,7 +30,7 @@ jobs:
       - run: 
           name: Run Tests
           command: |
-            JEST_JUNIT_OUTPUT_DIR="./artifacts/jest" \
+            JEST_JUNIT_OUTPUT_DIR="./test_results/jest" \
             yarn test \
             --ci \
             --reporters="default" \
@@ -38,4 +38,4 @@ jobs:
 
 
       - store_test_results:
-          path: ./artifacts
+          path: ./test_results
