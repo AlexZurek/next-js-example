@@ -1,10 +1,8 @@
-import MyLayout from "../components/MyLayout";
-
 const About = () => (
-  <MyLayout>
+  <div>
     <h1>About</h1>
     <p>This is where you'll find all sorts of information about me.</p>
-  </MyLayout>
+  </div>
 );
 
 export default About;

@@ -1,10 +1,8 @@
-import MyLayout from "../components/MyLayout";
-
 const Index = () => (
-  <MyLayout>
+  <div>
     <h1>Home</h1>
     <p>This is the main page of the app.</p>
-  </MyLayout>
+  </div>
 );
 
 export default Index;

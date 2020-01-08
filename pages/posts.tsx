@@ -7,16 +7,16 @@ import CardMedia from "@material-ui/core/CardMedia";
 import Button from "@material-ui/core/Button";
 import posts from "../dummy-posts";
 import { NextPage } from "next";
-import MyLayout from "../components/MyLayout";
+import Link from "next/link";
 
 const Posts: NextPage = () => {
   return (
-    <MyLayout>
-      <div style={{ marginTop: 20, padding: 30 }}>
-        <Grid container spacing={3} justify="center">
-          {posts.map(post => (
-            <Grid item key={post.title}>
-              <Card>
+    <div style={{ marginTop: 20, padding: 30 }}>
+      <Grid container spacing={3} justify="center">
+        {posts.map(post => (
+          <Grid item key={post.title}>
+            <Card>
+              <Link href="/post/[id]" as={`/post/${post.id}`}>
                 <CardActionArea>
                   <CardMedia
                     component="img"
@@ -32,20 +32,20 @@ const Posts: NextPage = () => {
                     <Typography component="p">{post.excerpt}</Typography>
                   </CardContent>
                 </CardActionArea>
-                <CardActions>
-                  <Button size="small" color="primary">
-                    Share
-                  </Button>
-                  <Button size="small" color="primary">
-                    Learn More
-                  </Button>
-                </CardActions>
-              </Card>
-            </Grid>
-          ))}
-        </Grid>
-      </div>
-    </MyLayout>
+              </Link>
+              <CardActions>
+                <Button size="small" color="primary">
+                  Share
+                </Button>
+                <Button size="small" color="secondary">
+                  Learn More
+                </Button>
+              </CardActions>
+            </Card>
+          </Grid>
+        ))}
+      </Grid>
+    </div>
   );
 };
 
