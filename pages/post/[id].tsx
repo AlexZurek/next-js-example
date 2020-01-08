@@ -1,5 +1,4 @@
 import { useRouter } from "next/router";
-import posts from "../../dummy-posts";
 import { NextPage } from "next";
 
 const Post: NextPage = () => {
