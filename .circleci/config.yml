@@ -18,19 +18,23 @@ jobs:
             - v1-dependencies-{{ checksum "package.json" }}
             - v1-dependencies-
 
-      - run: yarn install
+      - run: 
+          name: Install Dependencies
+          command: yarn install
 
       - save_cache:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
 
-      - run: |
-          JEST_JUNIT_OUTPUT_DIR="./artifacts/jest" \
-          yarn test \
-          --ci \
-          --reporters="default" \
-          --reporters="jest-junit" \
+      - run: 
+          name: Run Tests
+          command: |
+            JEST_JUNIT_OUTPUT_DIR="./artifacts/jest" \
+            yarn test \
+            --ci \
+            --reporters="default" \
+            --reporters="jest-junit" \
 
 
       - store_test_results:
