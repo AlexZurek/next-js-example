@@ -15,8 +15,8 @@ jobs:
 
       - restore_cache:
           keys:
-            - v2-dependencies-{{ checksum "package.json" }}
-            - v2-dependencies-
+            - v1-jest-dependencies-{{ checksum "package.json" }}
+            - v1-jest-dependencies-
 
       - run: 
           name: Install Dependencies
@@ -25,8 +25,7 @@ jobs:
       - save_cache:
           paths:
             - node_modules
-            - /root/.cache/Cypress
-          key: v2-dependencies-{{ checksum "package.json" }}
+          key: v1-jest-dependencies-{{ checksum "package.json" }}
 
       - run: 
           name: Run Tests
@@ -52,8 +51,8 @@ jobs:
 
       - restore_cache:
           keys:
-            - v2-dependencies-{{ checksum "package.json" }}
-            - v2-dependencies-
+            - v1-cypress-dependencies-{{ checksum "package.json" }}
+            - v1-cypress-dependencies-
 
       - run:
           name: Install Dependencies
@@ -63,7 +62,7 @@ jobs:
           paths:
             - node_modules
             - /root/.cache/Cypress
-          key: v2-dependencies-{{ checksum "package.json" }}
+          key: v1-cypress-dependencies-{{ checksum "package.json" }}
 
       - run:
           name: Run Tests
