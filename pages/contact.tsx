@@ -4,7 +4,7 @@ const Contact = () => (
   <div
     style={{
       margin: 20,
-      padding: 20
+      padding: "0 25%"
     }}
   >
     <form>
