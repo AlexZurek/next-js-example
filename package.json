@@ -9,7 +9,7 @@
     "start": "next start -p $PORT",
     "test": "jest",
     "test:watch": "jest --watch",
-    "test:cypress": "yarn build && PORT=3000 yarn start & wait-on http://localhost:3000 && yarn run cypress run"
+    "test:cypress": "yarn build && PORT=3000 yarn start & wait-on http://localhost:3000 && yarn run cypress run && kill -9 $(lsof -t -i:3000)"
   },
   "keywords": [],
   "author": "",
