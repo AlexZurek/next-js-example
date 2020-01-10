@@ -61,12 +61,13 @@ jobs:
       - save_cache:
           paths:
             - node_modules
+            - /root/.cache/Cypress
           key: v1-dependencies-{{ checksum "package.json" }}
 
       - run:
           name: Run Tests
           command: |
-            yarn test:cypress --reporter junit
+            yarn test:cypress:ci
 
       - store_test_results:
           path: ./test_results
