@@ -25,6 +25,7 @@ jobs:
       - save_cache:
           paths:
             - node_modules
+            - /root/.cache/Cypress
           key: v2-dependencies-{{ checksum "package.json" }}
 
       - run: 
