@@ -66,17 +66,18 @@ jobs:
       - run:
           name: Run Tests
           command: |
-            yarn run cypress run \
-            --reporter junit
+            yarn test:cypress --reporter junit
 
       - store_test_results:
           path: ./test_results
 
-      - persist_to_workspace:
-          root: /cypress
-          paths:
-            - vidoes/*
-            - screenshots/*
+      - store_artifacts:
+          path: cypress/videos/
+          destination: cypress-videos
+
+      - store_artifacts:
+          path: cypress/screenshots/
+          destination: cypress-screenshots
 
 workflows:
   version: 2
