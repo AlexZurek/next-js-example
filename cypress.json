@@ -1,3 +1,7 @@
 {
-    "baseUrl": "http://localhost:3000"
+    "baseUrl": "http://localhost:3000",
+    "reporterOptions": {
+        "overwrite": false,
+        "mochaFile": "test_results/cypress/test_output_[hash].xml"
+    }
 }

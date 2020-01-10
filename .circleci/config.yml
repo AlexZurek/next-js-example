@@ -4,7 +4,7 @@
 
 version: 2
 jobs:
-  build:
+  jest-tests:
     docker:
       - image: circleci/node:13.5.0
 
@@ -39,3 +39,48 @@ jobs:
 
       - store_test_results:
           path: ./test_results
+
+  cypress-tests:
+    docker:
+      - image: cypress/base:13.3.0
+
+    working_directory: ~/repo
+
+    steps:
+      - checkout
+
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "package.json" }}
+            - v1-dependencies-
+
+      - run:
+          name: Install Dependencies
+          command: yarn install
+
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package.json" }}
+
+      - run:
+          name: Run Tests
+          command: |
+            yarn run cypress run \
+            --reporters junit
+
+      - store_test_results:
+          path: ./test_results
+
+      - persist_to_workspace:
+          root: /cypress
+          paths:
+            - vidoes/*
+            - screenshots/*
+
+workflows:
+  version: 2
+  test:
+    jobs:
+      - jest-tests
+      - cypress-tests
