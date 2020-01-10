@@ -67,7 +67,7 @@ jobs:
           name: Run Tests
           command: |
             yarn run cypress run \
-            --reporters junit
+            --reporter junit
 
       - store_test_results:
           path: ./test_results
