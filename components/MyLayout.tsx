@@ -1,6 +1,6 @@
 import { NextPage } from "next";
 import { AppBar, Toolbar, BottomNavigation } from "@material-ui/core";
-import NavBar from "./NavBar";
+import { NavBar } from "components/NavBar";
 import CSS from "csstype";
 import Link from "next/link";
 

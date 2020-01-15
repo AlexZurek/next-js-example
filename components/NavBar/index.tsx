@@ -4,7 +4,7 @@ import ListItem from "@material-ui/core/ListItem";
 import { NextPage } from "next";
 import Link from "next/link";
 
-const NavBar: NextPage = () => (
+export const NavBar: NextPage = () => (
   <List component="nav">
     <ListItem component="div">
       <Link href="/posts">
@@ -21,5 +21,3 @@ const NavBar: NextPage = () => (
     </ListItem>
   </List>
 );
-
-export default NavBar;
