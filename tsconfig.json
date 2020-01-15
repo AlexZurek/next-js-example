@@ -31,15 +31,12 @@
   },
   "exclude": [
     "node_modules",
-    "cypress",
-    "**/*.spec.ts",
-    "**/*.spec.tsx",
-    "**/*.test.ts",
-    "**/*.test.tsx"
+    "cypress"
   ],
   "include": [
     "next-env.d.ts",
     "**/*.ts",
-    "**/*.tsx"
+    "**/*.tsx", 
+    "next.config.js"
   ]
 }
