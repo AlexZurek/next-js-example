@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import { NextPage } from "next";
-import { makeRequest } from "../../src/fetcher";
-import { PostType } from "../../src/types/PostType";
+import { makeRequest } from "src/fetcher";
+import { PostType } from "src/types/PostType";
 import CSS from "csstype";
 
 const postStyle: CSS.Properties = {

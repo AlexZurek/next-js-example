@@ -6,9 +6,5 @@ export function makeRequest<T>(url: string) {
 }
 
 async function fetchJson(url: string) {
-  try {
-    return await axios.get(url).then(r => r.data);
-  } catch (error) {
-    console.error(error);
-  }
+  return await axios.get(url).then(r => r.data);
 }

@@ -1,14 +1,17 @@
-import { Grid, Typography } from "@material-ui/core";
-import Card from "@material-ui/core/Card";
-import CardActionArea from "@material-ui/core/CardActionArea";
-import CardActions from "@material-ui/core/CardActions";
-import CardContent from "@material-ui/core/CardContent";
-import CardMedia from "@material-ui/core/CardMedia";
-import Button from "@material-ui/core/Button";
+import {
+  Grid,
+  Typography,
+  Card,
+  CardActionArea,
+  CardActions,
+  CardContent,
+  CardMedia,
+  Button
+} from "@material-ui/core";
 import { NextPage } from "next";
 import Link from "next/link";
-import { makeRequest } from "../src/fetcher";
-import { PostType } from "../src/types/PostType";
+import { makeRequest } from "src/fetcher";
+import { PostType } from "src/types/PostType";
 
 const Posts: NextPage = () => {
   const { data, error } = makeRequest<PostType[]>("/api/allPosts");
